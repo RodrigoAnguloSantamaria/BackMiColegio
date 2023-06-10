@@ -1,0 +1,19 @@
+-crear db en atlas colegio con coleccion alumno
+-creat carpeta en pc colegio
+-en visual abrir carpeta colegio y estructura de carpetas (src, api, utils,...)
+-en terminal npm init -y
+-en terminal npm i express mongoose cors bcrypt cloudinary
+-en terminal npm i nodemon -D
+-en package.json añadir "scripts"
+-en .env añado variables PORT y DB_URL
+-en server.js iniciar server y arrancarle con npm run dev
+-en db.js crear conexion a BBDD siguiendo ejemplos de clases
+-in server.js importar {connect} y llamar a la funcion connect()
+-comprobar que conecta a BBDD
+-crear modelos, controladores y routes para entidades (alumnos, profesores, asignaturas,notas)
+-exportarlos e importarlos tanto en server.js como donde corresponda
+-crear semillas para ir creando contenido 
+-crear de nuevo semillas con las relaciones de los id
+-probar los metodos de cada uno con postman devolviendo un log en res.body
+
+
