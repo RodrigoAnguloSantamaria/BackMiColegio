@@ -10,7 +10,8 @@ const alumnoSchema = new Schema(
         curso:[{type:Schema.Types.ObjectId, ref:"cursos"}],
         profesores: [{type: Schema.Types.ObjectId, ref: "profesores"}],
         asignaturas: [{type: Schema.Types.ObjectId, ref: "asignaturas"}],
-        contacto: [{type:String, required:true}],
+        correo: {type:String, required:false},
+        telefono: {type:Number, required:false},
         foto: {type:String, required:false}
     }
 

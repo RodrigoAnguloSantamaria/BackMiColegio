@@ -25,8 +25,9 @@ connect();
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Method', 'POST, GET, PUT, DELETE, PATCH'); //Decimos que metodos tenemos permitidos
     res.header('Access-Control-Allow-Credentials', 'true'); //permitimos la conexión con credenciales(Bearer token)
-    res.header('Access-Control-Allow-Headers', 'Content-Type'); // permitimos los headers del tipo Content-Type
+    res.header('Access-Control-Allow-Headers',"Content-Type"); // permitimos los headers del tipo Content-Type
     next();
+    
  })
  app.use(cors(
     {

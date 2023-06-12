@@ -56,6 +56,7 @@ const getAlumnoById = async (req, res)=>{
 
 // post de un alumno
 const postAlumno = async (req, res)=>{
+    console.log(req.body)
     try {
         const newAlumno = new alumno(req.body);
         const createdAlumno = await newAlumno.save();
