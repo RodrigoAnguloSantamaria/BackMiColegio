@@ -56,10 +56,20 @@ const getAlumnoById = async (req, res)=>{
 
 // post de un alumno
 const postAlumno = async (req, res)=>{
-    console.log(req.body)
+    //console.log(req.file)
     try {
         const newAlumno = new alumno(req.body);
+        if(req.file){
+            
+            newAlumno.foto = req.file.path;
+            console.log(newAlumno)
+        }
+        else{
+            newAlumno.foto = "https://static.vecteezy.com/system/resources/previews/002/318/271/non_2x/user-profile-icon-free-vector.jpg"
+        }
+        
         const createdAlumno = await newAlumno.save();
+        
         return res.status(201).json(newAlumno);
 
     } catch (error) {
@@ -72,8 +82,13 @@ const putAlumno = async (req, res)=>{
     try {
         console.log(req.params)
         const {id} = req.params;
+        
         const putAlumno = new alumno(req.body);
         putAlumno._id = id;
+        if(req.file){
+            putAlumno.foto = req.file.path;
+        }
+        
         const updateAlumno = await alumno.findByIdAndUpdate(id, putAlumno);
         if (!updateAlumno){
             return res.status(404).json({mesage: "el id no existe"})
